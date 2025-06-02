@@ -7,7 +7,7 @@ from pages.funciones_page import Funciones_Globales
 from selectores.selectorLogin import LoginSelector
 
 prefijoEvi= "Login_"
-rutaEvi= "C:/TODO_PLAYRIGHT/Demos/Swag_Labs/scr/evidencia/imagen/Login"
+rutaEvi= "C:/TODO_PLAYRIGHT/Swag_Labs/Swag_Labs/scr/evidencia/imagen/Login"
 
 def test_CamposVacios(set_up):
     #Inicializamos la variable page que se origina en la función set_up en el archivo de configuración
