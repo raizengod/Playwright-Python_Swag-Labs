@@ -5,8 +5,8 @@ from playwright.sync_api import Page, expect, Playwright, sync_playwright
 from datetime import datetime
 import os
 
-#1- Creamos una clase
 class Funciones_Globales:
+    
     #2- Creamos una función incial 'Constructor'-----ES IMPORTANTE TENER ESTE INICIADOR-----
     def __init__(self, page):
         self.page= page
@@ -17,19 +17,18 @@ class Funciones_Globales:
         timestamp = now.strftime("%Y-%m-%d_%H-%M-%S-%f")[:-3] # Quita los últimos 3 dígitos para milisegundos más precisos
         return f"{prefijo}_{timestamp}"
     
-    #4- crear primera función basica, para este caso creamos una para tiempo de espera que espera recibir el parametro tiempo
+    #4- Crear función basica para tiempo de espera que espera recibir el parametro tiempo
     #En caso de no pasar el tiempo por parametro, el mismo tendra un valor de medio segundo
     def Esperar(self, tiempo=0.5):
         time.sleep(tiempo)
     
-    #5- Crear proxima función
-    #El valor tiempo es para indicar el tiempo que se tardará en hacer el scroll
+    #5- Crear función para indicar el tiempo que se tardará en hacer el scroll
     def Scroll(self, horz, vert, tiempo=0.5): 
         #Usamos 'self' ya que lo tenemos inicializada en __Init__ y para que la palabra page de la función funcione es necesaria
         self.page.mouse.wheel(horz, vert)
         time.sleep(tiempo)
         
-    #6- Nueva función global para tomar captura de pantalla
+    #6- Nueva función para tomar captura de pantalla
     def tomar_captura(self, nombre_base, directorio):
         if not os.path.exists(directorio):
             os.makedirs(directorio) # Crea el directorio si no existe
@@ -39,7 +38,7 @@ class Funciones_Globales:
         print(f"Captura guardada en: {ruta_completa}") # Para ver dónde se guardó
         self.Esperar()
         
-    #7- Crear nueva función para campo y capture la imagen
+    #7- Crear nueva función para campo con capture la imagen
     def cTextoImg(self, selector, texto, nombre_base, directorio, tiempo=0.5):
         t=self.page.locator(selector)
         expect(t).to_be_visible()
@@ -94,7 +93,7 @@ class Funciones_Globales:
         self.tomar_captura(nombre_base=nombre_base, directorio=directorio) # Llama a la función de captura
         time.sleep(tiempo)
         
-    #12- Crear nueva función para mensaje de confirmación
+    #12- Crear nueva función para mensajes
     def Men_Confir(self, selector, mensaje, nombre_base, directorio, tiempo= 0.5):
         mc= self.page.locator(selector)
         mc.highlight()
@@ -114,7 +113,7 @@ class Funciones_Globales:
         expect(self.page).to_have_url(re.compile(texto))
         time.sleep(tiempo)
         
-    #15- Crear nueva función para mensaje de confirmación no visible
+    #15- Crear nueva función para mensaje no visible
     def Men_No_Visible(self, selector, nombre_base, directorio, tiempo= 0.5):
         mc= self.page.locator(selector)
         expect(mc).to_be_hidden()
@@ -170,10 +169,30 @@ class Funciones_Globales:
         cb.first.click()
         self.tomar_captura(nombre_base=nombre_base, directorio=directorio) # Llama a la función de captura
     
-    #22- Crear nueva función para validar que un tipo imagen es visible
-    def Elemento_Visible(self, selector, nomre_base, directorio, tiempo= 0.5):
+    #22- Crear nueva función para validar que un tipo elemento es visible
+    def Elemento_Visible(self, selector, nombre_base, directorio, tiempo= 0.5):
         ev= self.page.locator(selector)
         expect(ev).to_be_visible()
         ev.highlight()
+        self.tomar_captura(nombre_base=nombre_base, directorio=directorio) # Llama a la función de captura
+        time.sleep(tiempo)
+        
+    #23- Crear función para marcar chek
+    def Marcar_Check(self, selector, nombre_base, directorio, tiempo= 0.5):
+        mc= self.page.locator(selector)
+        expect(mc).to_be_visible()
+        mc.highlight()
+        self.tomar_captura(nombre_base=nombre_base, directorio=directorio) # Llama a la función de captura
+        expect(mc).to_be_check()
+        self.tomar_captura(nombre_base=nombre_base, directorio=directorio) # Llama a la función de captura
+        time.sleep(tiempo)
+        
+    #24- Crear función para desmarcar chek
+    def Desmarcar_Check(self, selector, nombre_base, directorio, tiempo= 0.5):
+        dc= self.page.locator(selector)
+        expect(dc).to_be_visible()
+        dc.highlight()
+        self.tomar_captura(nombre_base=nombre_base, directorio=directorio) # Llama a la función de captura
+        expect(dc).not_to_be_checked()
         self.tomar_captura(nombre_base=nombre_base, directorio=directorio) # Llama a la función de captura
         time.sleep(tiempo)
