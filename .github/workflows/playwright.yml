@@ -17,8 +17,10 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
+    - name: Ensure pytest ar installed
+      run: pytest -m pip pytest-playwright install
     - name: Ensure browsers are installed
-      run: python -m playwright install --with-deps
+      run: python -m playwright install
     - name: Run your tests
       run: pytest --tracing=retain-on-failure
     - uses: actions/upload-artifact@v4
