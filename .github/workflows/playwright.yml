@@ -18,15 +18,17 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
-          python-version: '3.x' # Puedes especificar una versión exacta, e.g., '3.9', '3.10', '3.11'
+          python-version: '3.x' # Asegúrate de que esta sea la versión de Python que usas
       - name: Instalar dependencias de Python
         run: |
           python -m pip install --upgrade pip
-          pip install -r requirements.txt # Esto instalará pytest-playwright desde tu requirements.txt
+          pip install -r requirements.txt # Asegúrate de que pytest-playwright esté en requirements.txt
       - name: Instalar navegadores de Playwright
         run: playwright install --with-deps
-      - name: Ejecutar pruebas de Playwright
-        run: pytest
+      - name: Ejecutar pruebas de Playwright en orden específico
+        run: |
+          # El orden de ejecución de los archivos de prueba se define aquí
+          pytest test_login.py test_home.py test_producto.py test_carrito.py test_menu.py -s -v
       - name: Subir informe de pruebas de Playwright
         uses: actions/upload-artifact@v4
         if: always()
