@@ -28,7 +28,7 @@ jobs:
       - name: Ejecutar pruebas de Playwright en orden específico
         run: |
           # El orden de ejecución de los archivos de prueba se define aquí
-          pytest test_login.py test_home.py test_producto.py test_carrito.py test_menu.py -s -v
+          pytest swag_labs/test/test_login.py swag_labs/test/test_home.py swag_labs/test/test_producto.py swag_labs/test/test_carrito.py swag_labs/test/test_menu.py -s -v
       - name: Subir informe de pruebas de Playwright
         uses: actions/upload-artifact@v4
         if: always()
