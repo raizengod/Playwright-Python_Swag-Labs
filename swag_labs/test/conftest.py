@@ -50,7 +50,7 @@ def set_up(playwright: Playwright) -> None:
 @pytest.fixture(scope= "session")
 #Luego de usar el mark creamos nuestra función
 def set_up_login(playwright: Playwright) -> None:    
-    browser= playwright.chromium.launch(headless= False, slow_mo= 500)
+    browser= playwright.chromium.launch(headless= True, slow_mo= 500)
     context = browser.new_context()
     
     #Con este comando grabamos pantalla en formato video
