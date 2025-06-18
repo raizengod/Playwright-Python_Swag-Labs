@@ -6,7 +6,7 @@
 
 Este proyecto es una suite de automatización de pruebas para la aplicación web **Swag Labs**, una tienda de comercio electrónico ficticia. Desarrollado como parte de mi portafolio, demuestra mi capacidad para diseñar, implementar y mantener pruebas automatizadas robustas y eficientes utilizando **Playwright** con **Python**. El objetivo principal es asegurar la funcionalidad crítica de la aplicación, desde el inicio de sesión hasta la gestión del carrito de compras y la visualización de productos.
 
-**Repositorio:** [https://github.com/tu-usuario/SWAG_LABS](https://github.com/tu-usuario/SWAG_LABS)
+**Repositorio:** [https://github.com/tu-usuario/SWAG_LABS](https://github.com/raizengod/Playwright-Python_Swag-Labs.git)
 
 ## 🛠️ Tecnologías Utilizadas
 
