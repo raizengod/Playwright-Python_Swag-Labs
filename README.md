@@ -22,36 +22,39 @@ La estructura del proyecto está diseñada para ser modular, escalable y fácil 
 .github
 ├── .github
 
-SWAG_LABS/\
-├── .github/\
-│   └── workflows/\
-│       └── playwright.yml         # Configuración de GitHub Actions para CI\
-├── mv_Swag_Labs/\
-│   └── swag_labs/                 # Contenedor principal del código fuente\
-│       ├── pages/                 # Implementación del Page Object Model (POM)\
-│       │   ├── init.py\
-│       │   ├── base_page.py       # Clase base con funciones globales\
-│       │   ├── login_page.py      # Ejemplo de Page Object para Login (si existe)\
-│       │   ├── home_page.py       # Ejemplo de Page Object para Home (si existe)\
-│       │   └── cart_page.py       # Ejemplo de Page Object para Carrito (si existe)\
-│       ├── selectores\            # Centralización de selectores de elementos web\
-│       │   ├── init.py\
-│       │   ├── selectorCarrito.py\
-│       │   ├── selectorHome.py\
-│       │   ├── selectorLogin.py\
-│       │   ├── selectorMenu.py\
-│       │   └── selectorProducto.py\
-│       └── test/                  # Archivos de pruebas Pytest\
-│           ├── evidencia\         # Directorio para capturas de pantalla/videos de evidencia\
-│           ├── init.py\
-│           ├── conftest.py        # Configuración global de Pytest, fixtures\
-│           ├── test_carrito.py    # Pruebas relacionadas con el carrito de compras\
-│           ├── test_home.py       # Pruebas de la página de inicio\
-│           ├── test_login.py      # Pruebas de la funcionalidad de inicio de sesión\
-│           ├── test_menu.py       # Pruebas del menú de navegación (si existe)\
-│           └── test_producto.py   # Pruebas de la visualización y detalles de productos (si existe)\
-├── .gitignore                     # Archivo para ignorar archivos y directorios en Git\
+```
+SWAG_LABS/
+├── .github/
+│   └── workflows/
+│       └── playwright.yml         # Configuración de GitHub Actions para CI
+├── mv_Swag_Labs/
+│   └── swag_labs/                 # Contenedor principal del código fuente
+│       ├── pages/                 # Implementación del Page Object Model (POM)
+│       │   ├── __init__.py
+│       │   ├── base_page.py       # Clase base con funciones globales
+│       │   ├── login_page.py      # Ejemplo de Page Object para Login (si existe)
+│       │   ├── home_page.py       # Ejemplo de Page Object para Home (si existe)
+│       │   └── cart_page.py       # Ejemplo de Page Object para Carrito (si existe)
+│       │   └── ... (otras páginas de la aplicación)
+│       ├── selectores/            # Centralización de selectores de elementos web
+│       │   ├── __init__.py
+│       │   ├── selectorCarrito.py
+│       │   ├── selectorHome.py
+│       │   ├── selectorLogin.py
+│       │   ├── selectorMenu.py
+│       │   └── selectorProducto.py
+│       └── test/                  # Archivos de pruebas Pytest
+│           ├── evidencia/         # Directorio para capturas de pantalla/videos de evidencia
+│           ├── __init__.py
+│           ├── conftest.py        # Configuración global de Pytest, fixtures
+│           ├── test_carrito.py    # Pruebas relacionadas con el carrito de compras
+│           ├── test_home.py       # Pruebas de la página de inicio
+│           ├── test_login.py      # Pruebas de la funcionalidad de inicio de sesión
+│           ├── test_menu.py       # Pruebas del menú de navegación (si existe)
+│           └── test_producto.py   # Pruebas de la visualización y detalles de productos (si existe)
+├── .gitignore                     # Archivo para ignorar archivos y directorios en Git
 └── requirements.txt               # Dependencias del proyecto
+```
 
 
 ### Explicación y Ejemplos de Archivos Clave:
