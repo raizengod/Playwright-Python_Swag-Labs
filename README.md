@@ -27,10 +27,11 @@ SWAG_LABS/
 │   └── swag_labs/                 # Contenedor principal del código fuente
 │       ├── pages/                 # Implementación del Page Object Model (POM)
 │       │   ├── init.py
-│       │   └── base_page.py       # Clase base con funciones globales
-│       │   └── login_page.py      # Ejemplo de Page Object para Login
-│       │   └── home_page.py       # Ejemplo de Page Object para Home
-│       │   └── cart_page.py       # Ejemplo de Page Object para Carrito
+│       │   ├── base_page.py       # Clase base con funciones globales
+│       │   ├── login_page.py      # Ejemplo de Page Object para Login (si existe)
+│       │   ├── home_page.py       # Ejemplo de Page Object para Home (si existe)
+│       │   └── cart_page.py       # Ejemplo de Page Object para Carrito (si existe)
+│       │   └── ... (otras páginas de la aplicación)
 │       ├── selectores/            # Centralización de selectores de elementos web
 │       │   ├── init.py
 │       │   ├── selectorCarrito.py
@@ -45,8 +46,8 @@ SWAG_LABS/
 │           ├── test_carrito.py    # Pruebas relacionadas con el carrito de compras
 │           ├── test_home.py       # Pruebas de la página de inicio
 │           ├── test_login.py      # Pruebas de la funcionalidad de inicio de sesión
-│           ├── test_menu.py       # Pruebas del menú de navegación
-│           └── test_producto.py   # Pruebas de la visualización y detalles de productos
+│           ├── test_menu.py       # Pruebas del menú de navegación (si existe)
+│           └── test_producto.py   # Pruebas de la visualización y detalles de productos (si existe)
 ├── .gitignore                     # Archivo para ignorar archivos y directorios en Git
 └── requirements.txt               # Dependencias del proyecto
 
@@ -173,7 +174,7 @@ SWAG_LABS/
         from selectores.selectorLogin import LoginPageLocators
 
         eImagenLogin = "Evidencias/Imagen"
-        url_Login = "https://www.saucedemo.com/"
+        url_Login = "[https://www.saucedemo.com/](https://www.saucedemo.com/)"
 
         @pytest.fixture(scope="function")
         def set_up(playwright: Playwright) -> None:
@@ -287,7 +288,7 @@ Para ejecutar las pruebas localmente, sigue los siguientes pasos:
 
 1.  **Clonar el repositorio:**
     ```bash
-    git clone https://github.com/raizengod/Playwright-Python_Swag-Labs.git
+    git clone [https://github.com/raizengod/Playwright-Python_Swag-Labs.git](https://github.com/raizengod/Playwright-Python_Swag-Labs.git)
     cd SWAG_LABS
     ```
 
