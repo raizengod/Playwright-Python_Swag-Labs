@@ -35,7 +35,6 @@ SWAG_LABS/
 │       │   ├── login_page.py      # Ejemplo de Page Object para Login (si existe)
 │       │   ├── home_page.py       # Ejemplo de Page Object para Home (si existe)
 │       │   └── cart_page.py       # Ejemplo de Page Object para Carrito (si existe)
-│       │   └── ... (otras páginas de la aplicación)
 │       ├── selectores/            # Centralización de selectores de elementos web
 │       │   ├── __init__.py
 │       │   ├── selectorCarrito.py
