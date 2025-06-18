@@ -18,7 +18,7 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
-          python-version: '3.x' # Asegúrate de que esta sea la versión de Python que usas
+          python-version: '3.13.3' # Asegúrate de que esta sea la versión de Python que usas
       - name: Instalar dependencias de Python
         run: |
           python -m pip install --upgrade pip
@@ -28,7 +28,7 @@ jobs:
       - name: Ejecutar pruebas de Playwright en orden específico
         run: |
           # El orden de ejecución de los archivos de prueba se define aquí
-          pytest swag_labs/test/test_login.py swag_labs/test/test_home.py swag_labs/test/test_producto.py swag_labs/test/test_carrito.py swag_labs/test/test_menu.py -s -v
+          pytest swag_labs/test/test_login.py swag_labs/test/test_home.py swag_labs/test/test_producto.py swag_labs/test/test_carrito.py swag_labs/test/test_menu.py -s -v --template=html1/index.html --report=reporte_de_ejecución.html
       - name: Subir informe de pruebas de Playwright
         uses: actions/upload-artifact@v4
         if: always()
