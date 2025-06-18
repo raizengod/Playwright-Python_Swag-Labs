@@ -17,15 +17,17 @@ Este proyecto es una suite de automatización de pruebas para la aplicación web
 
 ## 📂 Estructura del Proyecto
 
+La estructura del proyecto está diseñada para ser modular, escalable y fácil de mantener, siguiendo las mejores prácticas en automatización de pruebas:
+
 SWAG_LABS/
 ├── .github/
 │   └── workflows/
 │       └── playwright.yml         # Configuración de GitHub Actions para CI
 ├── mv_Swag_Labs/
-│   └── swag_labs/
+│   └── swag_labs/                 # Contenedor principal del código fuente
 │       ├── pages/                 # Implementación del Page Object Model (POM)
 │       │   ├── init.py
-│       │   └── base_page.py       # Clase base para todas las páginas
+│       │   └──  base_page.py       # Clase base para todas las páginas
 │       ├── selectores/            # Centralización de selectores de elementos web
 │       │   ├── init.py
 │       │   ├── selectorCarrito.py
@@ -34,7 +36,7 @@ SWAG_LABS/
 │       │   ├── selectorMenu.py
 │       │   └── selectorProducto.py
 │       └── test/                  # Archivos de pruebas Pytest
-│           ├── evidencia/         # Directorio para capturas de pantalla/videos de evidencia (si se implementa)
+│           ├── evidencia/         # Directorio para capturas de pantalla/videos de evidencia
 │           ├── init.py
 │           ├── conftest.py        # Configuración global de Pytest, fixtures
 │           ├── test_carrito.py    # Pruebas relacionadas con el carrito de compras
