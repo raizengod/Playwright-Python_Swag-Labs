@@ -19,6 +19,9 @@ Este proyecto es una suite de automatización de pruebas para la aplicación web
 
 La estructura del proyecto está diseñada para ser modular, escalable y fácil de mantener, siguiendo las mejores prácticas en automatización de pruebas:
 
+.github
+├── .github
+
 SWAG_LABS/
  ├── .github/
  │   └── workflows/
